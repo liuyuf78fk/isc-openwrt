@@ -1,0 +1,26 @@
+; db.192.168.1 - Reverse zone file for 192.168.1.0/24
+;
+; Copyright (C) 2025 Liu Yu <f78fk@live.com>
+;
+; This file is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+; License: https://creativecommons.org/licenses/by-sa/4.0/
+;
+; You are free to share and adapt this file under the terms of the license,
+; as long as you give appropriate credit and distribute contributions under the same license.
+;
+; Version: 1.0.0
+; Date: 2025-07-13
+;
+
+$TTL 86400
+@       IN      SOA     ns.liuyu.dns. admin.liuyu.dns. (
+                        2025071002 ; Serial
+                        3600       ; Refresh
+                        1800       ; Retry
+                        604800     ; Expire
+                        86400      ; Negative Cache TTL
+)
+@       IN      NS      ns.liuyu.dns.
+
+1       IN      PTR     liuyu.dns.
+
