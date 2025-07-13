@@ -96,4 +96,14 @@ service named restart
 
 ---
 
+## 8. Performance Test Report
+
+For detailed performance testing of Kea DHCP4 on IPQ807X platform, see the [performance report](./kea-dhcp4-ipq807x-performance-report.md).
+
+---
+
 This setup replaces the default dnsmasq with a more flexible and robust Kea DHCP4 and BIND9 combination.
+
+
+
+
