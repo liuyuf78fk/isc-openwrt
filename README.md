@@ -7,7 +7,7 @@ This guide explains how to replace the default OpenWrt DHCP and DNS servers with
 ## Hardware Environment
 
 - Device Model: Redmi AX6
-- CPU: Qualcomm IPQ807X, 4-core Cortex-A53 @ 1.4GHz
+- CPU: Qualcomm IPQ8071A, 4-core Cortex-A53 @ 1.4GHz
 - RAM: 512MB DDR3
 - Firmware: Custom compiled OpenWrt 24.10 with NSS support
 
