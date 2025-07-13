@@ -5,7 +5,7 @@
 
 **Device Under Test (DUT)**
 - Model: Redmi AX6 Router
-- SoC: Qualcomm IPQ807X (4x Cortex-A53 @ 1.4GHz)
+- SoC: Qualcomm IPQ8071A (4x Cortex-A53 @ 1.4GHz)
 - Memory: 512MB DDR3
 - Network: 5GHz WiFi (80MHz bandwidth, channel 36)
 - DHCP Server: KEA DHCP4 with full Class B address pool
@@ -16,6 +16,35 @@
 - Virtualization: VMware Workstation 17
 - Guest OS: Ubuntu 24.04 (bridged networking)
 - Test Tool: perfdhcp (ISC DHCP performance measurement tool)
+
+**Test Architecture Diagram**
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'fontSize': '12px', 'nodeSpacing': '40'}}}%%
+graph TB
+    subgraph Laptop: ThinkPad X1 Carbon
+        A1[Intel_AX211_WiFi6E]
+        A2[VMware Workstation 17]
+        A3[Ubuntu 24.04 VM]
+        A4[perfdhcp Test Tool]
+        A1 --> A2 --> A3 --> A4
+    end
+
+    subgraph Router: Redmi AX6
+        B1[Qualcomm QCN5054]
+        B2[Qualcomm IPQ8071A SoC]
+        B3[KEA DHCP4 Server]
+        B1 -->|PCIe| B2 --> B3
+    end
+
+    A1 -->|WiFi6_5GHz| B1
+
+    style A1 fill:#f0f9ff,stroke:#333
+    style A2 fill:#f0f9ff,stroke:#333
+    style A3 fill:#f0f9ff,stroke:#333
+    style A4 fill:#cce5ff,stroke:#333,fontWeight:bold
+    style B1 fill:#e8ffe8,stroke:#333
+    style B2 fill:#b2f2bb,stroke:#333,fontWeight:bold
+```
 
 **Test Methodology**
 1. Baseline Test: 400 requests/sec with 2 threads
