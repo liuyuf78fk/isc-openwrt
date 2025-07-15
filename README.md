@@ -37,8 +37,9 @@ uci commit dhcp
 Copy init script and configuration file:
 
 ```bash
-cp ./kea-dhcp4/etc/init/kea-dhcp4 /etc/init/
-cp ./kea-dhcp4/etc/kea/kea-dhcp4.conf /etc/kea/
+cp ./kea/etc/init/kea-dhcp4 /etc/init/
+cp ./kea/etc/kea/kea-dhcp4.conf /etc/kea/
+cp ./kea/usr/sbin/kea-wrapper /usr/sbin/
 ```
 
 Edit the DHCP server configuration:

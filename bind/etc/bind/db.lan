@@ -1,4 +1,4 @@
-; db.liuyu.dns - Forward zone file for liuyu.dns.
+; db.lan.dns - Forward zone file for lan.
 ;
 ; Copyright (C) 2025 Liu Yu <f78fk@live.com>
 ;
@@ -12,15 +12,13 @@
 ; Date: 2025-07-16
 ;
 
-$TTL 86400	; 1 day
-liuyu.dns.		IN SOA	ns.liuyu.dns. admin.liuyu.dns. (
-				2025071301 ; serial
+$TTL 600	; 10 minutes
+lan.			IN SOA	ns.liuyu.dns. admin.liuyu.dns. (
+				2025071497 ; serial
 				3600       ; refresh (1 hour)
 				1800       ; retry (30 minutes)
 				604800     ; expire (1 week)
 				86400      ; minimum (1 day)
 				)
 			NS	ns.liuyu.dns.
-			A	192.168.1.1
-$TTL 86400	; 1 day
-ns.liuyu.dns.		A	192.168.1.1
+

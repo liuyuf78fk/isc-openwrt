@@ -8,19 +8,17 @@
 ; You are free to share and adapt this file under the terms of the license,
 ; as long as you give appropriate credit and distribute contributions under the same license.
 ;
-; Version: 1.0.0
-; Date: 2025-07-13
+; Version: 1.0.1
+; Date: 2025-07-16
 ;
 
-$TTL 86400
-@       IN      SOA     ns.liuyu.dns. admin.liuyu.dns. (
-                        2025071002 ; Serial
-                        3600       ; Refresh
-                        1800       ; Retry
-                        604800     ; Expire
-                        86400      ; Negative Cache TTL
-)
-@       IN      NS      ns.liuyu.dns.
-
-1       IN      PTR     liuyu.dns.
-
+$TTL 600	; 10 minutes
+1.168.192.in-addr.arpa.	IN SOA	ns.liuyu.dns. admin.liuyu.dns. (
+				2025071476 ; serial
+				3600       ; refresh (1 hour)
+				1800       ; retry (30 minutes)
+				604800     ; expire (1 week)
+				86400      ; minimum (1 day)
+				)
+			NS	ns.liuyu.dns.
+1.1.168.192.in-addr.arpa. PTR	liuyu.dns.

@@ -1,0 +1,46 @@
+#!/bin/sh /etc/rc.common
+# 
+# kea-dhcp4 - OpenWrt init script for Kea DHCPv4 server 
+#
+# Copyright (C) 2025 Liu Yu <f78fk@live.com>
+#
+# This file is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+# You may obtain a copy of the license at:
+# https://creativecommons.org/licenses/by-sa/4.0/
+#
+# You are free to share and adapt this file under the terms of the license,
+# as long as you give appropriate credit and distribute contributions under the same license.
+#
+# Version: 1.0.1
+# Date: 2025-07-16
+
+START=98
+STOP=60
+USE_PROCD=1
+
+NAME=kea-dhcp4
+PROG=/usr/sbin/kea-dhcp4
+WRAPPER=/usr/sbin/kea-dhcp4-wrapper
+CONF=/etc/kea/kea-dhcp4.conf
+LEASE_FILE=/var/lib/kea/kea-leases4.csv
+LOGDIR=/var/log/kea
+RUNDIR=/var/run/kea
+START_DELAY=2
+
+start_service() {
+    mkdir -p $RUNDIR $LOGDIR /var/lib/kea
+    [ -f "$LEASE_FILE" ] || touch "$LEASE_FILE"
+
+    chmod 750 $RUNDIR
+    chmod 750 $LOGDIR
+    chmod 644 $LEASE_FILE
+    chown root:root $RUNDIR $LOGDIR $LEASE_FILE
+
+    procd_open_instance
+    procd_set_param command "$WRAPPER" "$PROG" "$CONF" "$START_DELAY"
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    procd_set_param respawn
+    procd_close_instance
+}
+

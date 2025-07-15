@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# kea-wrapper - Generic wrapper script for Kea components with delay support
+#
+# Copyright (C) 2025 Liu Yu <f78fk@live.com>
+#
+# This file is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+# You may obtain a copy of the license at:
+# https://creativecommons.org/licenses/by-sa/4.0/
+#
+# You are free to share and adapt this file under the terms of the license,
+# as long as you give appropriate credit and distribute contributions under the same license.
+#
+# Version: 1.0.0
+# Date: 2025-07-16
+
+BINARY="$1"
+CONFIG="$2"
+DELAY="${3:-0}"
+
+if [ -z "$BINARY" ] || [ -z "$CONFIG" ]; then
+    echo "Usage: $0 <binary> <config_file> [delay_seconds]" >&2
+    exit 1
+fi
+
+[ "$DELAY" -gt 0 ] 2>/dev/null && sleep "$DELAY"
+
+exec "$BINARY" -c "$CONFIG"
+
