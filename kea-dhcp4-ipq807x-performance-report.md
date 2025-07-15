@@ -52,6 +52,10 @@ graph TB
 3. Metrics Collected: Packet drops, latency statistics, successful exchanges
 
 **Test 1 Results (400 requests/sec)**
+```bash
+perfdhcp -xi -t 2 -r 400 -R 10000 192.168.1.1
+```
+*This command simulates 10,000 DHCP clients, generating 400 4-way exchanges per second.*
 - DISCOVER-OFFER Exchange:
   - Sent: 94,857 packets
   - Received: 94,856 packets
@@ -73,6 +77,10 @@ graph TB
     - Std Dev: 1.731ms
 
 **Test 2 Results (600 requests/sec - Stress Test to Find Maximum Throughput)**
+```bash
+perfdhcp -xi -t 2 -r 600 -R 10000 192.168.1.1
+```
+*This command simulates 10,000 DHCP clients, generating 600 4-way exchanges per second.*
 - Achieved Rate: 482.211 4-way exchanges/sec
 - DISCOVER-OFFER Exchange:
   - Sent: 12,323 packets
