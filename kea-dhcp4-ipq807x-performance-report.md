@@ -120,4 +120,7 @@ perfdhcp -xi -t 2 -r 600 -R 10000 192.168.1.1
 - Good hardware-software match: Indicates OpenWrt config, Kea compile options, and kernel UDP buffers are well optimized.
 - High short waits: Means packets arrive frequently and the system keeps up, which is normal behavior.
 
+*Although the 600 requests/sec stress test exceeded the system's performance ceiling and resulted in a ~10% packet drop, this is still an impressive result.
+For a consumer-grade router, such as the Redmi AX6, achieving over 480 exchanges per second and supporting tens of thousands of DHCP clients is remarkably strong performance.*
+
 **Note:** This is a preliminary and not fully rigorous performance test. The Qualcomm IPQ807X processor has 4 cores, but this test used only 2 threads, so CPU usage reached roughly 50% at peak load. Additionally, the WiFi connection introduces extra latency. Using a wired Ethernet connection and increasing to 4 threads could yield better performance and higher throughput.
