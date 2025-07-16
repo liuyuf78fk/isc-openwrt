@@ -8,14 +8,15 @@
 - SoC: Qualcomm IPQ8071A (4x Cortex-A53 @ 1.4GHz)
 - Memory: 512MB DDR3
 - Network: 5GHz WiFi (80MHz bandwidth, channel 36)
-- DHCP Server: KEA DHCP4 with full Class B address pool
+- DHCP Server Software: isc-kea-dhcp4 v2.6.0
+- Address Pool Range: Full Class B address pool
 - Lease Time: 2 minutes
 
 **Test Client Configuration**
 - Hardware: ThinkPad X1 Carbon with Intel AX211 WiFi
 - Virtualization: VMware Workstation 17
 - Guest OS: Ubuntu 24.04 (bridged networking)
-- Test Tool: perfdhcp (ISC DHCP performance measurement tool)
+- Test Tool: perfdhcp v3.0.0
 
 **Test Architecture Diagram**
 ```mermaid
