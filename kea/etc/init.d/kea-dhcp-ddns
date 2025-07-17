@@ -30,7 +30,6 @@ start_service() {
     mkdir -p "$RUNDIR" "$LOGDIR"
     chmod 750 "$RUNDIR"
     chmod 750 "$LOGDIR"
-    chown root:root "$RUNDIR" "$LOGDIR"
 
     procd_open_instance
     procd_set_param command "$WRAPPER" "$PROG" "$CONF" "$START_DELAY"

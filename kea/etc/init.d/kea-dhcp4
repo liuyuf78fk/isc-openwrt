@@ -34,7 +34,6 @@ start_service() {
     chmod 750 $RUNDIR
     chmod 750 $LOGDIR
     chmod 644 $LEASE_FILE
-    chown root:root $RUNDIR $LOGDIR $LEASE_FILE
 
     procd_open_instance
     procd_set_param command "$WRAPPER" "$PROG" "$CONF" "$START_DELAY"
