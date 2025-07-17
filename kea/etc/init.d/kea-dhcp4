@@ -20,7 +20,7 @@ USE_PROCD=1
 
 NAME=kea-dhcp4
 PROG=/usr/sbin/kea-dhcp4
-WRAPPER=/usr/sbin/kea-dhcp4-wrapper
+WRAPPER=/usr/sbin/kea-wrapper
 CONF=/etc/kea/kea-dhcp4.conf
 LEASE_FILE=/var/lib/kea/kea-leases4.csv
 LOGDIR=/var/log/kea
