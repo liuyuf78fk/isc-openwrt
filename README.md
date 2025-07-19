@@ -37,7 +37,7 @@ uci commit dhcp
 Copy init script and configuration file:
 
 ```bash
-cp ./kea/etc/init/kea-dhcp4 /etc/init/
+cp ./kea/etc/init.d/kea-dhcp4 /etc/init.d/
 cp ./kea/etc/kea/kea-dhcp4.conf /etc/kea/
 cp ./kea/usr/sbin/kea-wrapper /usr/sbin/
 ```
